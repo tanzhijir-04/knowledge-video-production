@@ -1,0 +1,14 @@
+__pycache__/
+*.pyc
+.env
+.env.*
+!.env.example
+node_modules/
+.cache/
+cache/
+video-projects/
+*.mp4
+*.wav
+*.mp3
+*.zip
+.DS_Store

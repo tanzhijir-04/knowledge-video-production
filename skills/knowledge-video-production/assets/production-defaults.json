@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 1,
+  "topic": "",
+  "stage": "initialized",
+  "style": "vox-editorial-paper-collage",
+  "engine": {
+    "framework": "hyperframes",
+    "animation": "gsap",
+    "styleSkill": "vox-style-animation",
+    "workflow": "general-video"
+  },
+  "storyboard": {
+    "allowedMedia": [
+      "imagegen",
+      "html",
+      "hybrid"
+    ],
+    "selection": "scene-dependent",
+    "timing": "provisional-until-recorded-voice"
+  },
+  "durationBudgetSeconds": [
+    180,
+    300
+  ],
+  "video": {
+    "width": 3840,
+    "height": 2560,
+    "fps": 60,
+    "aspect": "3:2",
+    "burnNarrationSubtitles": false,
+    "muxSubtitleTrack": false
+  },
+  "voice": {
+    "provider": "xiaomi-mimo",
+    "model": "mimo-v2.5-tts",
+    "voice": "茉莉",
+    "credentialEnv": "MIMO_API_KEY",
+    "timeStretch": false
+  },
+  "music": {
+    "selectionMode": "offer-topic-specific-options",
+    "optionCount": [
+      3,
+      4
+    ],
+    "status": "pending",
+    "selectedDirection": null,
+    "previews": "when-real-authorized-audio-is-available"
+  },
+  "fonts": {
+    "candidates": [
+      "Alibaba PuHuiTi 3",
+      "Source Han Serif CN",
+      "Lato",
+      "Playfair Display"
+    ],
+    "selection": "compare-real-content-before-locking-roles",
+    "resolvedRoles": {},
+    "english": {
+      "families": [
+        "Lato",
+        "Playfair Display"
+      ],
+      "requiredWeights": {
+        "Playfair Display": [
+          900
+        ]
+      },
+      "roleAssignment": "agent-discretion-per-composition"
+    }
+  },
+  "artDirection": {
+    "spec": "frame.md",
+    "representativeFrames": [
+      "opening",
+      "mechanism",
+      "comparison"
+    ],
+    "review": "native-and-thumbnail",
+    "status": "unverified"
+  },
+  "covers": [
+    {
+      "width": 1920,
+      "height": 1080,
+      "centerCropSafeAspect": "4:3"
+    },
+    {
+      "width": 1080,
+      "height": 1440
+    }
+  ],
+  "scenes": [],
+  "approval": {
+    "script": false,
+    "visualDirection": false
+  },
+  "note": "Personal defaults, not completed work or authorization for paid services, publication, or deletion."
+}

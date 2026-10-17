@@ -1,0 +1,6 @@
+interface:
+  display_name: "知识视频制作"
+  short_description: "配合 zhijie-writing，将知识文案制作成可发布视频、字幕与完整工程"
+  default_prompt: "用 $knowledge-video-production 配合 zhijie-writing，按我的默认设置完成一支知识视频。"
+policy:
+  allow_implicit_invocation: true

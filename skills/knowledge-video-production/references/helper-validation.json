@@ -1,0 +1,9 @@
+{
+  "initializerDefaultsAndNoOverwrite": true,
+  "ttsDryRunNoNetworkOrFiles": true,
+  "ttsRejectsTraversal": true,
+  "validVideoDecodeAndSRT": true,
+  "wrongFPSRejected": true,
+  "overlappingSRTRejected": true,
+  "noPaidAPICalls": true
+}
