@@ -52,6 +52,8 @@ description: Use when the user wants a Chinese knowledge explainer produced as a
 
 ## 字体与版式的前置验收
 
+采用默认 Vox 纸面方向时，必须执行[纸面拼贴材质与合成验收](references/paper-materials.md)：先以 3 类代表帧验证纸基底、剪贴边缘、硬偏移阴影、印刷与局部半色调，再扩展全片。奶油纯色不等于纸张；底层纹理被不透明 SVG 遮住即未实现。检查最终合成帧与动作，不能用 CSS 声明或技术通过代替风格证据。
+
 每次制作或修改视频，必须读取并执行[视觉验收契约 v1](references/visual-acceptance-contract.md)。契约定义通过标准，[布局检查与纠正闭环](references/layout-contract-and-qa.md)负责执行。逐场保留当前版本的真实帧、动态片段和纠错记录；不得用平均总分抵消阻断问题。检查或修正未完成时标记“待视觉验收”，普通内部纠正自主完成，不增加用户逐场审批。
 
 制作或修改画面时读[references/typography-and-layout.md](references/typography-and-layout.md)。先用开场、机制解释、数据对照三类代表画面验证设计，写入项目frame.md，再扩展全片。比较真实中文、英文、数字与图像的组合，不用字体名称清单代替设计，也不以“文件能渲染”证明美观。内部审查自主迭代；用户已授权全片时，不增加逐步审批。没有实际画面证据，不宣称审美问题已解决。
