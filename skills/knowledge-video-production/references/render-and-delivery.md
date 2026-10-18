@@ -18,6 +18,8 @@ GSAP timeline paused且可seek；同一属性的入口与drift不要重叠，动
 
 ## 色彩、声音与验收
 
+正式渲染前按[layout-contract-and-qa.md](layout-contract-and-qa.md)完成逐场布局审查；最终编码后从实际MP4抽查相同时点及转场两侧。记录证据对应的源码/素材/timeline版本。技术检查通过不能覆盖尚未修正的视觉缺陷。
+
 浏览器中间文件可能携带sRGB transfer、全范围、不同矩阵或ICC，也可能已由HyperFrames转换。先ffprobe核实，只有需要时才转换Rec.709 limited/yuv420p，不能只改标签或重复套Remotion的旧转色滤镜。通常H.264+AAC48k立体声、faststart，3840×2560@60的level可能高于普通UHD，需检查解码。采用HyperFrames当前支持的编码器配置，不把CQ与CRF当等价质量。
 
 音频交由框架的audio clip/当前音频机制或已验证的最终mux流程，不自己运行JS音频时钟。最终只有画面和混音，不渲染旁白caption DOM，不mux字幕轨，另存SRT。总长取同一帧精确timeline，核对帧数/时长。

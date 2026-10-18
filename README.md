@@ -38,7 +38,16 @@ npx skills add heygen-com/hyperframes
 npx skills add Cele-san/vox-style-animation --skill vox-style-animation
 ```
 
-zhijie-writing单独安装，不随本仓库分发；已有文案可直接进入制作。图像生成需要宿主实际可用工具，MiMo TTS需要MIMO_API_KEY环境变量及可用服务。限时免费并非永久保证。字体、音乐须核实授权。本仓库不附带上游skills、字体文件、历史成片或密钥。
+zhijie-writing单独安装，不随本仓库分发；已有文案可直接进入制作。图像生成需要宿主实际可用工具，MiMo TTS需要MIMO_API_KEY环境变量及可用服务。限时免费并非永久保证。字体、音乐须核实授权。本仓库不附带完整上游skills、字体文件、历史成片或密钥；create-storyboard的方法适配与许可见下文。
+
+## 分镜、动效与视觉验收
+
+- [分镜设计](skills/knowledge-video-production/references/storyboard-design.md)：镜头数量与画面密度独立设置，支持中/高密度，默认中；每分钟约10–15镜作为规划起点，按内容和实际配音调整。
+- [分镜连续性与剪辑](skills/knowledge-video-production/references/storyboard-continuity.md)：已本地融入create-storyboard的镜头卡、开始/关键动作/结束制作板、连续性约束、相邻承接和剪辑边界设计，适配HyperFrames；无需另装原版skill。来源版本及MIT许可随文件保留。
+- [扩展动效配方](skills/knowledge-video-production/references/motion-recipes.md)：8类解释性动作及速度曲线、时长起点、实现条件与验收要点，与Vox风格包协作。
+- [视觉验收契约](skills/knowledge-video-production/references/visual-acceptance-contract.md)及[布局纠错流程](skills/knowledge-video-production/references/layout-contract-and-qa.md)：每次制作或修改分镜/视频，查看真实预览，记录问题、纠正并复查。分镜按镜头及剪辑边界审查，静态与动态验证状态分别记录。
+
+这些文件是制作与验收规范，不是已验证的自动检测器或动画组件；文件存在、安装通过不等于成片已通过视觉审查。
 
 ## 使用
 

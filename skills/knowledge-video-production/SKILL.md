@@ -12,6 +12,7 @@ description: Use when the user wants a Chinese knowledge explainer produced as a
 - **zhijie-writing**：选题、研究、证据账本、论证、大纲、逐字稿与知识变化。需要写作时读其SKILL.md和当前模式引用。遵守署名要求：制作文档末尾一次，不能强加到旁白或画面。
 - **本skill**：视觉关系、独立图层、动效、声音、字幕、验收、封面与完整工程。已有批准稿/分镜直接继续对应阶段。
 - **vox-style-animation（Cele-san）**：HyperFrames专用VOX风格包，负责纸面/半色调、强调标记、动效词汇与转场。**HyperFrames**负责HTML/CSS/GSAP编排、预览、混音及逐帧渲染。不要与面向Remotion的xingchen-vox-collage混为一套。
+- **create-storyboard（已本地融入）**：镜头卡、连续性约束、相邻镜头承接、剪辑边界与制作板的方法已适配到[分镜连续性与剪辑](references/storyboard-continuity.md)，由storyboard-design流程调用；不依赖另装该skill，不继承其Seedance专用规格。
 - 只要求封面、字体或SRT时只处理该范围，不扩成全片制作。
 
 ## 可覆盖的用户默认值
@@ -23,6 +24,7 @@ description: Use when the user wants a Chinese knowledge explainer produced as a
 | 视觉 | **以vox-style-animation的纸面杂志拼贴为默认方向**：奶油纸底、黑色油墨字、实物剪贴、局部半色调、黄色划重点与手绘注释；地图/记录/对照保持可编辑。字体与比例适配中文，不照搬英文全大写和紧行距。避免电影预告片、粗糙3D、悬浮图标卡片与长时间PPT静止；不使用VOX标志或暗示官方关联 |
 | 图像 | 图片资产优先生图模型；地图/数据/标签用代码。生成素材不充当来源截图 |
 | 分镜 | 可用生图模型、HTML/CSS/SVG或两者混合；按画面任务选择，不要求用户指定。生图看构图/画风/场景，HTML核对精确文字、数据、图解关系与排版 |
+| 分镜数量与密度 | 按[分镜设计与验收](references/storyboard-design.md)拆分镜头，不把段落/场景数当镜头数。每分钟约10–15镜作为初始规划范围；画面信息密度可选“中 / 高”，未指定默认中，低密度仅作有意的局部停顿。镜头数量与信息密度独立调整 |
 | 字体 | 中文优先阿里普惠体3、思源宋体CN；英文使用Lato、Playfair Display Black（真实900字重），具体用途和搭配由agent/LLM根据内容自主安排，不固定标题/正文角色，也不要求全部同时使用。先以真实内容比较，再锁定实际字体、字重与版式。实际加载并核对授权与字形；D-DIN不再是默认英文字体；不声称生图文字用了已加载字体 |
 | 声音 | 小米MiMo TTS茉莉，清楚亲近、正常真人语速，依据录音定时，不硬拉伸 |
 | 音乐 | 制作时提供3–4种适合当期内容的音乐方向并推荐一种，允许用户自选、自带音乐或交由导演决定；有可用资源时附短试听。优先原创/现有工具/授权明确资源，人声优先；付费选择先报价并取得授权 |
@@ -42,7 +44,7 @@ description: Use when the user wants a Chinese knowledge explainer produced as a
 ## 制作路线
 
 1. 接收zhijie-writing的核心问题、原稿、每段知识变化、证据和限制，不为视觉效果改变因果、尺度或条件。
-2. 读[references/visual-direction.md](references/visual-direction.md)和已安装vox-style-animation的SKILL.md；按需读motion-vocabulary、asset-pipeline与starter。分镜可用生图模型或HTML，也可混合；每场定义视觉任务、主关系、独立图层、动作、旁白依赖、终态。先用关键帧/短动态片段内部检查，已授权全片则持续推进。风格包的Archivo/Inter、内嵌kinetic captions、6秒/16:9示例、供应商脚本都是上游默认，不得覆盖本用户中文字体、独立SRT、3:2/4K60和内置imagegen偏好。
+2. 读[references/storyboard-design.md](references/storyboard-design.md)、[references/visual-direction.md](references/visual-direction.md)和已安装vox-style-animation的SKILL.md；按需读motion-vocabulary、asset-pipeline与starter。按视觉任务拆镜，每镜有明确的信息变化、构图、动作与时序。每次制作或修改分镜都执行真实预览的视觉审查、纠正与复查，不只检查文字分镜表；已授权全片则持续推进。风格包的Archivo/Inter、内嵌kinetic captions、6秒/16:9示例、供应商脚本都是上游默认，不得覆盖本用户中文字体、独立SRT、3:2/4K60和内置imagegen偏好。
 3. 读[references/audio-and-timing.md](references/audio-and-timing.md)。实际配音后锁定帧精确timeline；字幕来自原稿，ASR只辅助时间；音效对齐真实事件，不套每场同样百分比。
 4. 先读已安装hyperframes入口，编写HTML前读hyperframes-core；按需加载animation/keyframes/creative/audio/cli/registry，读[references/render-and-delivery.md](references/render-and-delivery.md)。3–5分钟通常采用general-video工作流，已有zhijie稿/批准分镜与默认值写进BRIEF.md，避免重新做意图问卷。原生目标规格，可渐进渲染和复用有效缓存。仅用户明确要求或已批准旧工程继续时使用Remotion，并记录原因。
 5. 看原生关键帧、小图与关键动作，检查实际声音；完整解码、规格/帧数、音轨/响度、SRT文字/顺序/范围、移植路径有证据。`scripts/verify_delivery.py`只证明技术检查，不代表视觉审查或真人试听。
@@ -50,7 +52,15 @@ description: Use when the user wants a Chinese knowledge explainer produced as a
 
 ## 字体与版式的前置验收
 
+每次制作或修改视频，必须读取并执行[视觉验收契约 v1](references/visual-acceptance-contract.md)。契约定义通过标准，[布局检查与纠正闭环](references/layout-contract-and-qa.md)负责执行。逐场保留当前版本的真实帧、动态片段和纠错记录；不得用平均总分抵消阻断问题。检查或修正未完成时标记“待视觉验收”，普通内部纠正自主完成，不增加用户逐场审批。
+
 制作或修改画面时读[references/typography-and-layout.md](references/typography-and-layout.md)。先用开场、机制解释、数据对照三类代表画面验证设计，写入项目frame.md，再扩展全片。比较真实中文、英文、数字与图像的组合，不用字体名称清单代替设计，也不以“文件能渲染”证明美观。内部审查自主迭代；用户已授权全片时，不增加逐步审批。没有实际画面证据，不宣称审美问题已解决。
+
+每次制作或修改视频，都执行[references/layout-contract-and-qa.md](references/layout-contract-and-qa.md)的通用布局闭环：实际预览 → 程序测量与画面审查 → 问题清单 → 局部纠正 → 同时点复查。代表帧只用于选型，逐场检查覆盖全片；布局、字体、素材、时序变化后复查受影响范围。审查包括阅读顺序、视觉重心、疏密与留白、对齐与间距、文字适配、遮挡裁切及动态稳定性，不限于某种图解或截图案例。未解决的影响理解/阅读的缺陷不得通过视觉验收；沿用用户授权自主纠正，不把每轮内部检查变成用户审批。
+
+## 动效配方选择
+
+设计动作时，按需读取[references/motion-recipes.md](references/motion-recipes.md)中的速度曲线规则及相关配方，与vox-style-animation的motion-vocabulary配合使用。先按知识变化选择动作，再对齐真实旁白；不为用满配方添加装饰。配方时间只是起点，必须经过静态布局、运动极值及随机seek检查，不代表已验证的代码组件。用户的独立SRT、中文字体和当前视觉契约优先于上游示例。
 
 ## 音乐候选
 
