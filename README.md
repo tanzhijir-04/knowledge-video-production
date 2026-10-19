@@ -44,6 +44,8 @@ zhijie-writing单独安装，不随本仓库分发；已有文案可直接进入
 
 - [分镜设计](skills/knowledge-video-production/references/storyboard-design.md)：镜头数量与画面密度独立设置，支持中/高密度，默认中；每分钟约10–15镜作为规划起点，按内容和实际配音调整。
 - [分镜连续性与剪辑](skills/knowledge-video-production/references/storyboard-continuity.md)：已本地融入create-storyboard的镜头卡、开始/关键动作/结束制作板、连续性约束、相邻承接和剪辑边界设计，适配HyperFrames；无需另装原版skill。来源版本及MIT许可随文件保留。
+- [连贯动效](skills/knowledge-video-production/references/motion-continuity.md)：融入OneTake的视觉主线、承接物、段内节奏与跟随运镜方法，保留科普硬切与现有HyperFrames路线；未捆绑上游代码或资产，来源与授权边界见文档。
+- [音效与插图密度](skills/knowledge-video-production/references/sfx-and-illustration-density.md)：音效4–10事件/分钟、新插图组4–8组/分钟、插图有效时间覆盖40%–70%作为可调整规划起点；明确计数、复用、留白、例外与实际试听/画面验收。
 - [扩展动效配方](skills/knowledge-video-production/references/motion-recipes.md)：8类解释性动作及速度曲线、时长起点、实现条件与验收要点，与Vox风格包协作。
 - [视觉验收契约](skills/knowledge-video-production/references/visual-acceptance-contract.md)及[布局纠错流程](skills/knowledge-video-production/references/layout-contract-and-qa.md)：每次制作或修改分镜/视频，查看真实预览，记录问题、纠正并复查。分镜按镜头及剪辑边界审查，静态与动态验证状态分别记录。
 

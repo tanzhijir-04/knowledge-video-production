@@ -13,6 +13,7 @@ description: Use when the user wants a Chinese knowledge explainer produced as a
 - **本skill**：视觉关系、独立图层、动效、声音、字幕、验收、封面与完整工程。已有批准稿/分镜直接继续对应阶段。
 - **vox-style-animation（Cele-san）**：HyperFrames专用VOX风格包，负责纸面/半色调、强调标记、动效词汇与转场。**HyperFrames**负责HTML/CSS/GSAP编排、预览、混音及逐帧渲染。不要与面向Remotion的xingchen-vox-collage混为一套。
 - **create-storyboard（已本地融入）**：镜头卡、连续性约束、相邻镜头承接、剪辑边界与制作板的方法已适配到[分镜连续性与剪辑](references/storyboard-continuity.md)，由storyboard-design流程调用；不依赖另装该skill，不继承其Seedance专用规格。
+- **OneTake（方法融合）**：视觉主线、承接物、段内动静节奏、跟随运镜和连续性诊断已适配到[连贯动效](references/motion-continuity.md)。制作/修改分镜、设计动作或处理“像PPT”时读取；保留现有框架，不要求全片一镜到底。未捆绑上游代码与资产，来源及授权边界见该文。
 - 只要求封面、字体或SRT时只处理该范围，不扩成全片制作。
 
 ## 可覆盖的用户默认值
@@ -23,10 +24,12 @@ description: Use when the user wants a Chinese knowledge explainer produced as a
 | 动效框架 | **HyperFrames + HTML/CSS + 可seek的GSAP时间线**，默认制作路线；不能未说明就换回Remotion |
 | 视觉 | **以vox-style-animation的纸面杂志拼贴为默认方向**：奶油纸底、黑色油墨字、实物剪贴、局部半色调、黄色划重点与手绘注释；地图/记录/对照保持可编辑。字体与比例适配中文，不照搬英文全大写和紧行距。避免电影预告片、粗糙3D、悬浮图标卡片与长时间PPT静止；不使用VOX标志或暗示官方关联 |
 | 图像 | 图片资产优先生图模型；地图/数据/标签用代码。生成素材不充当来源截图 |
+| 插图密度 | 按[音效与插图密度](references/sfx-and-illustration-density.md)规划：新插图组平均4–8组/分钟、解释性插图覆盖正文40%–70%作为可调整起点；图表/证据主导段可有理由偏离。不按镜头逐一生图，不把信息组当插图数 |
 | 分镜 | 可用生图模型、HTML/CSS/SVG或两者混合；按画面任务选择，不要求用户指定。生图看构图/画风/场景，HTML核对精确文字、数据、图解关系与排版 |
 | 分镜数量与密度 | 按[分镜设计与验收](references/storyboard-design.md)拆分镜头，不把段落/场景数当镜头数。每分钟约10–15镜作为初始规划范围；画面信息密度可选“中 / 高”，未指定默认中，低密度仅作有意的局部停顿。镜头数量与信息密度独立调整 |
 | 字体 | 中文优先阿里普惠体3、思源宋体CN；英文使用Lato、Playfair Display Black（真实900字重），具体用途和搭配由agent/LLM根据内容自主安排，不固定标题/正文角色，也不要求全部同时使用。先以真实内容比较，再锁定实际字体、字重与版式。实际加载并核对授权与字形；D-DIN不再是默认英文字体；不声称生图文字用了已加载字体 |
 | 声音 | 小米MiMo TTS茉莉，清楚亲近、正常真人语速，依据录音定时，不硬拉伸 |
+| 音效 | 按[音效与插图密度](references/sfx-and-illustration-density.md)设计有意义事件，平均4–10事件/分钟作为规划起点；10秒内超过3次起音触发复查，每个解释段保留无新增点状SFX的阅读/讲解区，人声优先 |
 | 音乐 | 制作时提供3–4种适合当期内容的音乐方向并推荐一种，允许用户自选、自带音乐或交由导演决定；有可用资源时附短试听。优先原创/现有工具/授权明确资源，人声优先；付费选择先报价并取得授权 |
 | 母版 | **3840×2560、60FPS、3:2数字Open Gate构图**。这是个人默认，不代表所有相机Open Gate一样；本次指令可覆盖 |
 | 字幕 | **独立UTF-8 SRT，不烧录旁白、不封装字幕轨**。保留必要讲解文字；无装饰页码、章号、英文顶栏、AI角标；不得移除素材强制标记 |
